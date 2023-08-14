@@ -11,6 +11,10 @@
 		B08707B42A8A67C8000ADA8F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B08707B32A8A67C8000ADA8F /* Config.plist */; };
 		B08707B62A8A953A000ADA8F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707B52A8A953A000ADA8F /* NewsCell.swift */; };
 		B08707BD2A8A97A2000ADA8F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707BC2A8A97A2000ADA8F /* CategoryCell.swift */; };
+		B08707C12A8AAB8E000ADA8F /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707C02A8AAB8E000ADA8F /* NewsViewModel.swift */; };
+		B08707C32A8AABBD000ADA8F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707C22A8AABBD000ADA8F /* SearchViewModel.swift */; };
+		B08707C52A8AABD9000ADA8F /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707C42A8AABD9000ADA8F /* CategoriesViewModel.swift */; };
+		B08707C72A8AABF9000ADA8F /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707C62A8AABF9000ADA8F /* WebViewModel.swift */; };
 		B0FCFA682A839EB6006BAD36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCFA672A839EB6006BAD36 /* AppDelegate.swift */; };
 		B0FCFA6A2A839EB6006BAD36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCFA692A839EB6006BAD36 /* SceneDelegate.swift */; };
 		B0FCFA6F2A839EB6006BAD36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FCFA6D2A839EB6006BAD36 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 		B08707B32A8A67C8000ADA8F /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		B08707B52A8A953A000ADA8F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		B08707BC2A8A97A2000ADA8F /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		B08707C02A8AAB8E000ADA8F /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		B08707C22A8AABBD000ADA8F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B08707C42A8AABD9000ADA8F /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		B08707C62A8AABF9000ADA8F /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		B0FCFA642A839EB6006BAD36 /* FlashFy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashFy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FCFA672A839EB6006BAD36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FCFA692A839EB6006BAD36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				B08707AF2A8A61A7000ADA8F /* WebScreenViewController.swift */,
+				B08707C62A8AABF9000ADA8F /* WebViewModel.swift */,
 			);
 			name = WebScreen;
 			path = ..;
@@ -157,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FCFA822A83A3B0006BAD36 /* NewsViewController.swift */,
+				B08707C02A8AAB8E000ADA8F /* NewsViewModel.swift */,
 			);
 			name = NewsScreen;
 			path = ..;
@@ -166,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FCFA842A83A3FF006BAD36 /* CategoriesViewController.swift */,
+				B08707C42A8AABD9000ADA8F /* CategoriesViewModel.swift */,
 			);
 			name = CategoriesScreen;
 			path = ..;
@@ -175,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FCFA862A83A44E006BAD36 /* SearchViewController.swift */,
+				B08707C22A8AABBD000ADA8F /* SearchViewModel.swift */,
 			);
 			name = SearchScreen;
 			path = ..;
@@ -252,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08707C72A8AABF9000ADA8F /* WebViewModel.swift in Sources */,
+				B08707C32A8AABBD000ADA8F /* SearchViewModel.swift in Sources */,
 				B0FCFA872A83A44E006BAD36 /* SearchViewController.swift in Sources */,
 				B0FCFA722A839EB6006BAD36 /* FlashFy.xcdatamodeld in Sources */,
 				B08707B02A8A61A7000ADA8F /* WebScreenViewController.swift in Sources */,
@@ -259,7 +273,9 @@
 				B0FCFA6A2A839EB6006BAD36 /* SceneDelegate.swift in Sources */,
 				B08707BD2A8A97A2000ADA8F /* CategoryCell.swift in Sources */,
 				B0FCFA832A83A3B0006BAD36 /* NewsViewController.swift in Sources */,
+				B08707C12A8AAB8E000ADA8F /* NewsViewModel.swift in Sources */,
 				B08707B62A8A953A000ADA8F /* NewsCell.swift in Sources */,
+				B08707C52A8AABD9000ADA8F /* CategoriesViewModel.swift in Sources */,
 				B0FCFA852A83A3FF006BAD36 /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,8 +7,10 @@
 
 import UIKit
 
-class CategoriesViewController: UIViewController {
+final class CategoriesViewController: UIViewController {
 
+    @IBOutlet private weak var categoriesCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categorieCell" id="iVz-4r-84F" customClass="CategoryCell" customModule="FlashFy" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="iVz-4r-84F" customClass="CategoryCell" customModule="FlashFy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QZD-mY-qa8">
@@ -60,6 +60,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="175" height="175"/>
+                                        <connections>
+                                            <outlet property="categoryImageView" destination="inF-AH-wWu" id="Esx-5m-oeA"/>
+                                            <outlet property="categoryTitleLabel" destination="e7n-xp-nUC" id="6Np-fL-oy4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -75,6 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="L9Y-3o-0HG"/>
                     <connections>
+                        <outlet property="categoriesCollectionView" destination="xiI-jD-XoT" id="oRH-uy-48o"/>
                         <segue destination="Qil-j3-CEw" kind="show" id="L3n-A9-Dek"/>
                     </connections>
                 </viewController>
@@ -108,7 +113,7 @@
                                                         <constraint firstAttribute="width" constant="353" id="b1S-Gh-Ieq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERU-4V-W2w">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERU-4V-W2w">
                                                     <rect key="frame" x="35" y="160" width="323" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -134,6 +139,11 @@
                                                 <constraint firstItem="uBx-hR-mhd" firstAttribute="leading" secondItem="sly-v0-KGj" secondAttribute="leadingMargin" id="wkh-hT-ofB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDateLabel" destination="bdm-Wa-Jjm" id="V7d-OE-jmn"/>
+                                            <outlet property="newsImageView" destination="uBx-hR-mhd" id="3ZJ-3C-kLA"/>
+                                            <outlet property="newsTitleLabel" destination="ERU-4V-W2w" id="NFd-kS-baG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -149,6 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="News" id="BHt-EU-wKn"/>
                     <connections>
+                        <outlet property="newsTableView" destination="NoV-Al-OKd" id="a3T-Go-Zd9"/>
                         <segue destination="4IT-mS-ZN9" kind="show" id="2tM-Ko-Zpm"/>
                     </connections>
                 </viewController>
@@ -208,6 +219,11 @@
                                                 <constraint firstItem="9vO-hr-aUK" firstAttribute="leading" secondItem="jYg-NJ-7rA" secondAttribute="leadingMargin" id="vok-sq-jBI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDateLabel" destination="7h1-KO-Mmb" id="haM-aq-7pf"/>
+                                            <outlet property="newsImageView" destination="9vO-hr-aUK" id="FCv-TJ-CUg"/>
+                                            <outlet property="newsTitleLabel" destination="aj7-OY-RJr" id="TES-86-Qn9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -221,8 +237,11 @@
                             <constraint firstItem="wyx-tO-MHd" firstAttribute="bottom" secondItem="9Vq-Br-X0S" secondAttribute="bottom" id="lge-0k-zDz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="yAF-M9-wnA"/>
+                    <navigationItem key="navigationItem" title="Search" id="yAF-M9-wnA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3.decrease" catalog="system" id="Ola-di-Efg"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="discoveredNewsTableView" destination="9Vq-Br-X0S" id="bOd-dB-znW"/>
                         <segue destination="4IT-mS-ZN9" kind="show" id="6X4-TA-19a"/>
                     </connections>
                 </viewController>
@@ -230,10 +249,10 @@
             </objects>
             <point key="canvasLocation" x="2681.679389312977" y="-294.36619718309862"/>
         </scene>
-        <!--View Controller-->
+        <!--Web Screen View Controller-->
         <scene sceneID="1IP-yY-jQ1">
             <objects>
-                <viewController id="4IT-mS-ZN9" sceneMemberID="viewController">
+                <viewController id="4IT-mS-ZN9" customClass="WebScreenViewController" customModule="FlashFy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xOg-5P-KSB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,6 +276,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jbj-sZ-HDW"/>
+                    <connections>
+                        <outlet property="webView" destination="lRw-qB-KWN" id="pOL-Eh-KjH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvw-dC-ZrC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -346,12 +368,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2tM-Ko-Zpm"/>
+        <segue reference="6X4-TA-19a"/>
         <segue reference="L3n-A9-Dek"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

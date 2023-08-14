@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import WebKit
 
-class WebScreenViewController: UIViewController {
+final class WebScreenViewController: UIViewController {
 
+    @IBOutlet private weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

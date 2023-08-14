@@ -7,8 +7,10 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
+    @IBOutlet private weak var discoveredNewsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

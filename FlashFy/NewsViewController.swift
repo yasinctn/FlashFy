@@ -7,8 +7,10 @@
 
 import UIKit
 
-class NewsViewController: UIViewController {
+final class NewsViewController: UIViewController {
 
+    @IBOutlet private weak var newsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

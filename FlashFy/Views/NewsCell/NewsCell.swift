@@ -7,8 +7,12 @@
 
 import UIKit
 
-class NewsCell: UITableViewCell {
+final class NewsCell: UITableViewCell {
 
+    @IBOutlet private weak var newsImageView: UIImageView!
+    @IBOutlet private weak var newsDateLabel: UILabel!
+    @IBOutlet private weak var newsTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
