@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0064BFA2A8B8AAF009B594D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B0064BF92A8B8AAF009B594D /* SDWebImage */; };
+		B0064BFD2A8B9939009B594D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0064BFC2A8B9939009B594D /* Article.swift */; };
 		B08707B02A8A61A7000ADA8F /* WebScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707AF2A8A61A7000ADA8F /* WebScreenViewController.swift */; };
 		B08707B42A8A67C8000ADA8F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B08707B32A8A67C8000ADA8F /* Config.plist */; };
 		B08707B62A8A953A000ADA8F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707B52A8A953A000ADA8F /* NewsCell.swift */; };
@@ -27,14 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B08707AF2A8A61A7000ADA8F /* WebScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebScreenViewController.swift; sourceTree = "<group>"; };
+		B0064BFC2A8B9939009B594D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		B08707AF2A8A61A7000ADA8F /* WebScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebScreenViewController.swift; path = Screens/WebScreen/WebScreenViewController.swift; sourceTree = "<group>"; };
 		B08707B32A8A67C8000ADA8F /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		B08707B52A8A953A000ADA8F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		B08707BC2A8A97A2000ADA8F /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		B08707C02A8AAB8E000ADA8F /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
-		B08707C22A8AABBD000ADA8F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		B08707C42A8AABD9000ADA8F /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
-		B08707C62A8AABF9000ADA8F /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		B08707C02A8AAB8E000ADA8F /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsViewModel.swift; path = Screens/NewsScreen/NewsViewModel.swift; sourceTree = "<group>"; };
+		B08707C22A8AABBD000ADA8F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = Screens/SearchScreen/SearchViewModel.swift; sourceTree = "<group>"; };
+		B08707C42A8AABD9000ADA8F /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesViewModel.swift; path = Screens/CategoriesScreen/CategoriesViewModel.swift; sourceTree = "<group>"; };
+		B08707C62A8AABF9000ADA8F /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewModel.swift; path = Screens/WebScreen/WebViewModel.swift; sourceTree = "<group>"; };
 		B0FCFA642A839EB6006BAD36 /* FlashFy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashFy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FCFA672A839EB6006BAD36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FCFA692A839EB6006BAD36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +46,9 @@
 		B0FCFA732A839EB7006BAD36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0FCFA762A839EB7006BAD36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0FCFA782A839EB7006BAD36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0FCFA822A83A3B0006BAD36 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		B0FCFA842A83A3FF006BAD36 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
-		B0FCFA862A83A44E006BAD36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B0FCFA822A83A3B0006BAD36 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = Screens/NewsScreen/NewsViewController.swift; sourceTree = "<group>"; };
+		B0FCFA842A83A3FF006BAD36 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesViewController.swift; path = Screens/CategoriesScreen/CategoriesViewController.swift; sourceTree = "<group>"; };
+		B0FCFA862A83A44E006BAD36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Screens/SearchScreen/SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +56,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0064BFA2A8B8AAF009B594D /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0064BFB2A8B9922009B594D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0064BFC2A8B9939009B594D /* Article.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B08707AE2A8A6171000ADA8F /* WebScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +108,13 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		B0DEE6E12A8AC79200A45B33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B0FCFA5B2A839EB6006BAD36 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +134,8 @@
 		B0FCFA662A839EB6006BAD36 /* FlashFy */ = {
 			isa = PBXGroup;
 			children = (
+				B0064BFB2A8B9922009B594D /* Models */,
+				B0DEE6E12A8AC79200A45B33 /* Services */,
 				B0FCFA7F2A83A1C5006BAD36 /* Common */,
 				B08707BF2A8A9BB5000ADA8F /* Screens */,
 				B0FCFA812A83A23E006BAD36 /* Views */,
@@ -208,6 +229,9 @@
 			dependencies = (
 			);
 			name = FlashFy;
+			packageProductDependencies = (
+				B0064BF92A8B8AAF009B594D /* SDWebImage */,
+			);
 			productName = FlashFy;
 			productReference = B0FCFA642A839EB6006BAD36 /* FlashFy.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +260,9 @@
 				Base,
 			);
 			mainGroup = B0FCFA5B2A839EB6006BAD36;
+			packageReferences = (
+				B0064BF82A8B8AAF009B594D /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = B0FCFA652A839EB6006BAD36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0064BFD2A8B9939009B594D /* Article.swift in Sources */,
 				B08707C72A8AABF9000ADA8F /* WebViewModel.swift in Sources */,
 				B08707C32A8AABBD000ADA8F /* SearchViewModel.swift in Sources */,
 				B0FCFA872A83A44E006BAD36 /* SearchViewController.swift in Sources */,
@@ -494,6 +522,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B0064BF82A8B8AAF009B594D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = exactVersion;
+				version = 5.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B0064BF92A8B8AAF009B594D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0064BF82A8B8AAF009B594D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B0FCFA702A839EB6006BAD36 /* FlashFy.xcdatamodeld */ = {
