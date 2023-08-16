@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class NewsCell: UITableViewCell {
 
     @IBOutlet private weak var newsImageView: UIImageView!
     @IBOutlet private weak var newsDateLabel: UILabel!
     @IBOutlet private weak var newsTitleLabel: UILabel!
+    
+    static let identifier = "newsCell"
+    private(set) var sourceUrl: URL?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +28,15 @@ final class NewsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configure(for presentedCell: NewsCellPresenter) {
+        if let imageUrl = URL(string: presentedCell.imageUrl ?? "") {
+            newsImageView.sd_setImage(with:imageUrl)
+        }
+        newsTitleLabel.text = presentedCell.title
+        newsDateLabel.text = presentedCell.date
+        sourceUrl = URL(string: presentedCell.imageUrl ?? "")
+        newsImageView.layer.cornerRadius = 25
+        
+
+    }
 }
