@@ -10,6 +10,7 @@ import SDWebImage
 
 final class NewsCell: UITableViewCell {
 
+    @IBOutlet private weak var view: UIView!
     @IBOutlet private weak var newsImageView: UIImageView!
     @IBOutlet private weak var newsDateLabel: UILabel!
     @IBOutlet private weak var newsTitleLabel: UILabel!
@@ -36,7 +37,7 @@ final class NewsCell: UITableViewCell {
         newsDateLabel.text = presentedCell.date
         sourceUrl = URL(string: presentedCell.imageUrl ?? "")
         newsImageView.layer.cornerRadius = 25
-        
+        view.layer.cornerRadius = 25
 
     }
 }
