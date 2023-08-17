@@ -32,7 +32,7 @@ final class NewsViewModel {
 extension NewsViewModel: NewsViewOutput {
     func getArticles() async {
         do {
-            if let articles = try await networkService?.fetchArticles(category: categoryParams.general) {
+            if let articles = try await networkService?.fetchArticles(category: Category.general) {
                 
                 self.articles = articles
                 

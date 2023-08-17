@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum categoryParams: String {
+enum Category: String {
     case business = "businnes"
     case entertainment = "entertainment"
     case general = "general"
