@@ -89,14 +89,14 @@
                     <navigationItem key="navigationItem" title="Categories" id="L9Y-3o-0HG"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="xiI-jD-XoT" id="oRH-uy-48o"/>
-                        <segue destination="Qil-j3-CEw" kind="show" id="L3n-A9-Dek"/>
+                        <segue destination="Qil-j3-CEw" kind="show" identifier="categoriesToNews" id="L3n-A9-Dek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drB-cJ-Zp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2681.679389312977" y="416.90140845070425"/>
         </scene>
-        <!--News-->
+        <!--Hot News -->
         <scene sceneID="2Hg-Fw-E6Z">
             <objects>
                 <viewController id="Qil-j3-CEw" customClass="NewsViewController" customModule="FlashFy" customModuleProvider="target" sceneMemberID="viewController">
@@ -181,10 +181,10 @@
                             <constraint firstItem="NoV-Al-OKd" firstAttribute="top" secondItem="pAy-hC-2Gf" secondAttribute="top" id="sM7-GP-psR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="News" id="BHt-EU-wKn"/>
+                    <navigationItem key="navigationItem" title="Hot News " id="BHt-EU-wKn"/>
                     <connections>
                         <outlet property="newsTableView" destination="NoV-Al-OKd" id="a3T-Go-Zd9"/>
-                        <segue destination="4IT-mS-ZN9" kind="show" id="2tM-Ko-Zpm"/>
+                        <segue destination="4IT-mS-ZN9" kind="show" identifier="newsToWeb" id="2tM-Ko-Zpm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyM-9L-hKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -316,7 +316,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <tabBarAppearance key="standardAppearance" backgroundEffect="systemChromeMaterial"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="4Zh-nV-4Hg" kind="relationship" relationship="viewControllers" id="Vh7-rV-3YQ"/>
@@ -362,6 +362,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cOX-k3-Q4e">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="eoE-IO-b2y" kind="relationship" relationship="rootViewController" id="th9-SQ-420"/>
                     </connections>
@@ -393,7 +396,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2tM-Ko-Zpm"/>
+        <segue reference="6X4-TA-19a"/>
         <segue reference="ngH-VO-Tef"/>
     </inferredMetricsTieBreakers>
     <resources>

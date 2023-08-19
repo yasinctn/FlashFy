@@ -35,7 +35,7 @@ final class NewsCell: UITableViewCell {
         }
         newsTitleLabel.text = presentedCell.title
         newsDateLabel.text = presentedCell.date
-        sourceUrl = URL(string: presentedCell.imageUrl ?? "")
+        sourceUrl = URL(string: presentedCell.sourceUrl ?? "")
         newsImageView.layer.cornerRadius = 25
         view.layer.cornerRadius = 25
 

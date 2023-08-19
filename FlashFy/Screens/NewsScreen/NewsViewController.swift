@@ -9,12 +9,15 @@ import UIKit
 
 protocol NewsViewInput: AnyObject {
     func reloadData()
+    var newsUrl: URL? { get set }
 }
 
 final class NewsViewController: UIViewController {
 
     @IBOutlet private weak var newsTableView: UITableView!
     
+    var newsUrl: URL?
+    var selectedCategory: Category?
     private var viewModel: NewsViewOutput?
     
     override func viewDidLoad() {
@@ -23,7 +26,7 @@ final class NewsViewController: UIViewController {
         prepareTableView()
         
         Task {
-            await viewModel?.getArticles()
+            await viewModel?.getArticles(category: selectedCategory)
         }
     }
     
@@ -53,6 +56,20 @@ extension NewsViewController: UITableViewDataSource {
 // MARK: - Table View Delegate
 
 extension NewsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = tableView.cellForRow(at: indexPath) as! NewsCell
+        viewModel?.setNewsUrl(url: selectedCell.sourceUrl)
+        performSegue(withIdentifier: "newsToWeb", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newsToWeb" {
+            let destination = segue.destination as! WebScreenViewController
+            destination.selectedNewsUrl = newsUrl
+            
+        }
+    }
     
 }
 

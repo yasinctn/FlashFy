@@ -10,7 +10,8 @@ import Foundation
 protocol NewsViewOutput {
     func getArticle(_ index: Int) -> Article?
     var articleCount: Int { get }
-    func getArticles() async
+    func getArticles(category: Category?) async
+    func setNewsUrl(url: URL?)
 }
 
 final class NewsViewModel {
@@ -30,10 +31,14 @@ final class NewsViewModel {
 // MARK: - News View Output
 
 extension NewsViewModel: NewsViewOutput {
-    func getArticles() async {
+    
+    func setNewsUrl(url: URL?) {
+        view?.newsUrl = url
+    }
+    
+    func getArticles(category selectedCategory: Category?) async {
         do {
-            if let articles = try await networkService?.fetchArticles(category: Category.general) {
-                
+            if let articles = try await networkService?.fetchArticles(category: selectedCategory) {
                 self.articles = articles
                 
                 DispatchQueue.main.async { [ weak self ] in
