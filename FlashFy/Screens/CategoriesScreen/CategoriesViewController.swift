@@ -8,32 +8,21 @@
 import UIKit
 
 protocol CategoriesViewInput: AnyObject {
-    
+    var selectedCategory: Category? { get set }
 }
 
 final class CategoriesViewController: UIViewController {
     
     @IBOutlet private weak var categoriesCollectionView: UICollectionView!
     
+    var selectedCategory: Category?
     private var viewModel: CategoriesViewOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCollectionView()
         viewModel = CategoriesViewModel(view: self)
-        // Do any additional setup after loading the view.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
@@ -66,16 +55,23 @@ extension CategoriesViewController: UICollectionViewDataSource {
 }
 
 extension CategoriesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! CategoryCell
+        viewModel?.setSelectedCategory(category: selectedCell.selectedCategory)
+        performSegue(withIdentifier: "categoriesToNews", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "categoriesToNews" {
+            let destination = segue.destination as! NewsViewController
+            destination.selectedCategory = selectedCategory
+            destination.title = "\((selectedCategory?.rawValue.capitalized) ?? "News")"
+        }
+    }
 }
 
-extension CategoriesViewController: UICollectionViewDelegateFlowLayout {
-    
-}
 
-extension CategoriesViewController: CategoriesViewInput {
-    
-}
+extension CategoriesViewController: CategoriesViewInput { }
 
 private extension CategoriesViewController {
     

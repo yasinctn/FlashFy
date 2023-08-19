@@ -10,9 +10,11 @@ import Foundation
 protocol CategoriesViewOutput {
     func getCategory(_ index: Int) -> Category?
     var categoryCount: Int { get }
+    func setSelectedCategory(category: Category?)
 }
 
 final class CategoriesViewModel {
+    
     weak var view: CategoriesViewInput?
     private(set) var categories: [Category] = [.business,
                                                .entertainment,
@@ -37,4 +39,7 @@ extension CategoriesViewModel : CategoriesViewOutput {
         categories[safe: index]
     }
     
+    func setSelectedCategory(category: Category?) {
+        view?.selectedCategory = category
+    }
 }
