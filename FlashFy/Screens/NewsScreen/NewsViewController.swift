@@ -8,6 +8,7 @@
 import UIKit
 
 protocol NewsViewInput: AnyObject {
+    func showAlert(message: String)
     func reloadData()
     var newsUrl: URL? { get set }
 }
@@ -75,7 +76,11 @@ extension NewsViewController: UITableViewDelegate {
 
 // MARK: - Table View Input
 
-extension NewsViewController: NewsViewInput {
+extension NewsViewController: NewsViewInput, AlertPresentable {
+    func showAlert(message: String) {
+        presentAlert(message)
+    }
+    
     func reloadData() {
         newsTableView.reloadData()
     }

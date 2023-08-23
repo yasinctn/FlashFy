@@ -14,6 +14,7 @@
 		B0064C082A8BC504009B594D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0064C072A8BC504009B594D /* Errors.swift */; };
 		B0064C0A2A8C0380009B594D /* NewsCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0064C092A8C0380009B594D /* NewsCellPresenter.swift */; };
 		B03542BC2A8D5A2400ECB716 /* CategoryCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03542BB2A8D5A2400ECB716 /* CategoryCellPresenter.swift */; };
+		B05B18C82A9404490061CAA6 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05B18C72A9404490061CAA6 /* AlertPresentable.swift */; };
 		B08707B02A8A61A7000ADA8F /* WebScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707AF2A8A61A7000ADA8F /* WebScreenViewController.swift */; };
 		B08707B42A8A67C8000ADA8F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B08707B32A8A67C8000ADA8F /* Config.plist */; };
 		B08707B62A8A953A000ADA8F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08707B52A8A953A000ADA8F /* NewsCell.swift */; };
@@ -41,6 +42,7 @@
 		B0064C072A8BC504009B594D /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		B0064C092A8C0380009B594D /* NewsCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellPresenter.swift; sourceTree = "<group>"; };
 		B03542BB2A8D5A2400ECB716 /* CategoryCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellPresenter.swift; sourceTree = "<group>"; };
+		B05B18C72A9404490061CAA6 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		B08707AF2A8A61A7000ADA8F /* WebScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebScreenViewController.swift; path = Screens/WebScreen/WebScreenViewController.swift; sourceTree = "<group>"; };
 		B08707B32A8A67C8000ADA8F /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		B08707B52A8A953A000ADA8F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		B0064C002A8BBF48009B594D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B05B18C62A9403E30061CAA6 /* Protocols */,
 				B0064C042A8BC496009B594D /* Enums */,
 				B0064C012A8BBF51009B594D /* Extensions */,
 			);
@@ -107,6 +110,14 @@
 				B0CD38352A8D0DBC00F972A4 /* Parameters.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		B05B18C62A9403E30061CAA6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B05B18C72A9404490061CAA6 /* AlertPresentable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		B08707AE2A8A6171000ADA8F /* WebScreen */ = {
@@ -340,6 +351,7 @@
 				B08707C32A8AABBD000ADA8F /* SearchViewModel.swift in Sources */,
 				B0FCFA872A83A44E006BAD36 /* SearchViewController.swift in Sources */,
 				B0FCFA722A839EB6006BAD36 /* FlashFy.xcdatamodeld in Sources */,
+				B05B18C82A9404490061CAA6 /* AlertPresentable.swift in Sources */,
 				B08707B02A8A61A7000ADA8F /* WebScreenViewController.swift in Sources */,
 				B0FCFA682A839EB6006BAD36 /* AppDelegate.swift in Sources */,
 				B0FCFA6A2A839EB6006BAD36 /* SceneDelegate.swift in Sources */,

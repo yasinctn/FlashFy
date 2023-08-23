@@ -48,7 +48,19 @@ extension NewsViewModel: NewsViewOutput {
             }
         
         }catch {
-            print(error.localizedDescription)
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                
+                let error = error as! NetworkError
+                switch error {
+                case .invalidURL:
+                    self.view?.showAlert(message: "Invalid URL \n Please check your selection")
+                case .invalidResponse:
+                    self.view?.showAlert(message: "Invalid Response \n Please check your internet connection")
+                case .invalidData:
+                    self.view?.showAlert(message: "invalid Data")
+                }
+            }
         }
     }
     
