@@ -32,6 +32,8 @@ final class NewsCell: UITableViewCell {
     func configure(for presentedCell: NewsCellPresenter) {
         if let imageUrl = URL(string: presentedCell.imageUrl ?? "") {
             newsImageView.sd_setImage(with:imageUrl)
+        }else {
+            newsImageView.image = UIImage(named: "FlashNews")
         }
         newsTitleLabel.text = presentedCell.title
         newsDateLabel.text = presentedCell.date
