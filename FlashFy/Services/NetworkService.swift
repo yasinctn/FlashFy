@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func fetchArticles(category: Category?) async throws -> [Article]
+    func fetchArticles(category: Category?, country: Country?) async throws -> [Article]
     func fetchArticles(keyword q: String?) async throws -> [Article]
 }
 
@@ -38,10 +38,10 @@ final class NetworkService: NetworkServiceProtocol {
     
     
    
-    func fetchArticles(category: Category?) async throws -> [Article] {
+    func fetchArticles(category: Category?, country: Country?) async throws -> [Article] {
         
         let apiKey = getApiKey()
-        let endpoint = "https://newsapi.org/v2/top-headlines?country=us&category=\(category ?? .general)&apiKey=\(apiKey)"
+        let endpoint = "https://newsapi.org/v2/top-headlines?country=\(country ?? .us)&category=\(category ?? .general)&apiKey=\(apiKey)"
         
         guard let url = URL(string: endpoint) else {
             throw NetworkError.invalidURL

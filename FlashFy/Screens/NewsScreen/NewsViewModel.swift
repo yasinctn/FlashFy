@@ -10,8 +10,10 @@ import Foundation
 protocol NewsViewOutput {
     func getArticle(_ index: Int) -> Article?
     var articleCount: Int { get }
-    func getArticles(category: Category?) async
+    func getArticles(category: Category?, country: Country?) async
     func setNewsUrl(url: URL?)
+    func setSelectedCountry(country: Country?)
+    func getCountries() -> [Country]
 }
 
 final class NewsViewModel {
@@ -20,6 +22,11 @@ final class NewsViewModel {
     private var networkService: NetworkServiceProtocol?
     
     var articles: [Article] = []
+    let countries: [Country] = [
+        .ae, .ar, .at, .au, .be, .bg, .br, .ca, .ch, .cn, .co, .cu, .cz, .de, .eg, .fr, .gb, .gr, .hk,
+        .hu, .id, .ie, .il, .it, .jp, .kr, .lt, .lv, .ma, .mx, .my, .ng, .nl, .no, .nz, .ph, .pl, .pt,
+        .ro, .rs, .ru, .sa, .se, .sg, .si, .sk, .th, .tr, .tw, .ua, .us, .ve, .za
+    ]
     
     init(view: NewsViewInput, networkService: NetworkServiceProtocol = NetworkService()) {
         self.view = view
@@ -36,9 +43,9 @@ extension NewsViewModel: NewsViewOutput {
         view?.newsUrl = url
     }
     
-    func getArticles(category selectedCategory: Category?) async {
+    func getArticles(category selectedCategory: Category?, country selectedCountry: Country?) async {
         do {
-            if let articles = try await networkService?.fetchArticles(category: selectedCategory) {
+            if let articles = try await networkService?.fetchArticles(category: selectedCategory, country: selectedCountry) {
                 self.articles = articles
                 
                 DispatchQueue.main.async { [ weak self ] in
@@ -71,5 +78,15 @@ extension NewsViewModel: NewsViewOutput {
     func getArticle(_ index: Int) -> Article? {
         articles[safe: index]
     }
+    
+    func setSelectedCountry(country: Country?) {
+        view?.selectedCountry = country
+    }
+    
+    func getCountries() -> [Country] {
+        return countries
+    }
+    
+    
 }
 

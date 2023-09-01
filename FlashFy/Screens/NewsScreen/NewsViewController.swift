@@ -10,6 +10,7 @@ import UIKit
 protocol NewsViewInput: AnyObject {
     func showAlert(message: String)
     func reloadData()
+    var selectedCountry: Country? { get set }
     var newsUrl: URL? { get set }
 }
 
@@ -19,15 +20,16 @@ final class NewsViewController: UIViewController {
     
     var newsUrl: URL?
     var selectedCategory: Category?
+    var selectedCountry: Country?
     private var viewModel: NewsViewOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = NewsViewModel(view: self, networkService: NetworkService())
         prepareTableView()
-        
+        prepareMenu()
         Task {
-            await viewModel?.getArticles(category: selectedCategory)
+            await viewModel?.getArticles(category: selectedCategory, country: selectedCountry)
         }
     }
     
@@ -92,5 +94,30 @@ private extension NewsViewController {
     func prepareTableView() {
         newsTableView.dataSource = self
         newsTableView.delegate = self
+    }
+    
+    func prepareMenu() {
+        
+        let menu = UIMenu(title: "Countries", children: getMenuItems())
+        let barButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "globe"), primaryAction: nil, menu: menu)
+        navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    func getMenuItems() -> [UIAction] {
+        var items: [UIAction] = []
+        if let countries = viewModel?.getCountries(){
+            
+            for country in countries {
+                items.append(UIAction(title: country.rawValue) { [weak self] _ in 
+                    guard let self else { return }
+                    self.viewModel?.setSelectedCountry(country: country)
+                    Task {
+                        await self.viewModel?.getArticles(category: self.selectedCategory, country: self.selectedCountry)
+                        self.newsTableView.reloadData()
+                    }
+                })
+            }
+        }
+        return items
     }
 }

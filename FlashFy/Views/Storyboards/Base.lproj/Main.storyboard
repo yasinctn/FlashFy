@@ -289,21 +289,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="yAF-M9-wnA">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="line.3.horizontal" catalog="system" id="Rv7-Ts-zOd">
-                                <connections>
-                                    <action selector="filtrationButtonTapped:" destination="eoE-IO-b2y" id="KWz-KS-fzg"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="Ola-di-Efg">
-                                <connections>
-                                    <action selector="searchButtonTapped:" destination="eoE-IO-b2y" id="Rgu-sr-BRG"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="Ola-di-Efg">
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="eoE-IO-b2y" id="Rgu-sr-BRG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="filtrationButton" destination="Rv7-Ts-zOd" id="Ttx-MG-Q8Z"/>
                         <outlet property="foundNewsTableView" destination="9Vq-Br-X0S" id="bOd-dB-znW"/>
                         <outlet property="infoLabel" destination="fsv-I5-Inp" id="Uyo-HX-2mR"/>
                         <outlet property="searchButton" destination="Ola-di-Efg" id="6Fa-vp-Ppa"/>
@@ -437,13 +429,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2tM-Ko-Zpm"/>
+        <segue reference="6X4-TA-19a"/>
         <segue reference="ngH-VO-Tef"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Businnes" width="300" height="300"/>
         <image name="flame.fill" catalog="system" width="106" height="128"/>
-        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
