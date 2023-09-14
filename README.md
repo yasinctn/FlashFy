@@ -10,3 +10,18 @@ FlashFy is a news application that I continue to develop. It allows users to qui
  <img width="300" alt="Screenshot 2023-09-02 at 00 32 46" src="https://github.com/yasinctn/FlashFy/assets/96244256/5c81de7f-7d37-47ca-bf02-54fb76eeb306">
  <img width="300" alt="Screenshot 2023-09-02 at 00 35 00" src="https://github.com/yasinctn/FlashFy/assets/96244256/c0f9c4cd-e883-47c3-8221-6533d0de6be4">
  
+# What I used in application
+
+-> MVVM Pattern
+
+-> NewsApi
+
+-> Table View
+
+-> Collection View
+
+-> SDWebImage
+
+-> Tab Bar Controller
+
+
